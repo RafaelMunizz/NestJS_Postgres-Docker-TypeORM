@@ -28,9 +28,11 @@ export class CoursesService {
         if (!course) {
             throw new HttpException(`Course ID ${id} not found`, HttpStatus.NOT_FOUND);
         }
+
+        return course;
     }
 
-    // Dto => Data Transfer object | Geralmente usado quando se vai receber dados para criação e atualização
+    // Dto => Data Transfer object : Interface ou classe | Geralmente usado quando se vai receber dados para criação e atualização
     create(createCourseDto: any){
         this.courses.push(createCourseDto); // Inserindo novo dado 
     }

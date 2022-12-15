@@ -1,6 +1,8 @@
 import { Controller, Get, HttpStatus } from '@nestjs/common';
 import { Body, Delete, HttpCode, Param, Patch, Post, Res } from '@nestjs/common/decorators';
 import { CoursesService } from './courses.service';
+import { CreateCourseDto } from './dto/create-course.dto';
+import { UpdateCourseDto } from './dto/update-course.dto';
 
 @Controller('courses')
 export class CoursesController {
@@ -24,13 +26,13 @@ export class CoursesController {
     // Pegando coisas específicas do body, no caso o 'name'
     @Post()
     //@HttpCode(HttpStatus.NO_CONTENT) // Mandar resposta http da requisição (NO_CONTENT = Sem conteúdo)
-    create(@Body() body) {
-        return this.coursesService.create(body);
+    create(@Body() createCourseDto: CreateCourseDto) {
+        return this.coursesService.create(createCourseDto);
     }
 
     @Patch(':id')
-    update(@Param('id') id: string, @Body() body) {
-        return this.coursesService.update(id, body);
+    update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
+        return this.coursesService.update(id, updateCourseDto);
     }
 
     // Pegando coisas do id
