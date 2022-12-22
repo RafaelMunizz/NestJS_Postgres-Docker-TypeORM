@@ -7,15 +7,16 @@ import { CoursesModule } from './courses/courses.module';
 @Module({
   imports: [CoursesModule, TypeOrmModule.forRoot({
     type: 'postgres',
-    host: 'localhost',
+    host: 'db',
     port: 5432,
     username: 'postgres',
     password: 'dcop2022',
-    database: 'postgres',
+    database: 'cursonestjs',
     autoLoadEntities: true,
-    synchronize: true,
-  })],
-  // Apagar depois
+    synchronize: false,
+  }),
+],
+  
   controllers: [AppController],
   providers: [AppService],
 })
