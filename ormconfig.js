@@ -3,11 +3,11 @@ module.exports = {
     host: 'db',
     port: 5432,
     username: 'postgres',
-    password: 'dcop2022',
+    password: 'docker',
     database: 'cursonestjs',
     entities: ['dist/**/*.entity.js'],
     migrations: ['dist/migrations/*.js'],
     cli: {
-        migrationsDir: 'src/migrations',
+      migrationsDir: 'src/migrations',
     },
   };
