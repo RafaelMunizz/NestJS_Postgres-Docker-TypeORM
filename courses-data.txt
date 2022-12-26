@@ -1,0 +1,93 @@
+############################### Anotações - NEST.JS ###############################
+
+Propropriedades:
+
+    * Controllers:
+        Basicamente, os controllers lidam com as requisiçõe sque chegam e enviam uma resposta para o cliente.
+   
+    * Providers:
+        Muitas clássicas básicas no Nest.js são tratadas como providers. Servem os elementos funcionando como helpers.
+
+    * Imports:
+        Lista de módulos importados. Exportam os providers que foram requeridos em determinado módulo.
+
+    * Exports:
+        Funcionam como um subconjunto dos providers. Pode ser usado para enviar informações. 
+
+
+############################### Dados para alimentar ###############################
+
+{
+    "id": 1,
+    "name": "Fundamentos do framework NesJS",
+    "description": "Fundamentos do framework NesJS",
+    "tags": [
+        "node.js",
+        "nest.js",
+        "Javascript"
+    ]
+},
+{
+    "id": 2,
+    "name": "Fundamentos do framework NodeJS",
+    "description": "Framework NodeJS",
+    "tags": [
+        "node.js",
+        "Javascript"
+    ]
+},
+{
+    "id": 3,
+    "name": "Fundamentos do framework Express",
+    "description": "Framework Express",
+    "tags": [
+        "node.js",
+        "Javascript",
+        "Express"
+    ]
+}
+
+############################### Pacotes e instalação ###############################
+
+instalar Insomnia (Mandar requisições) / PostgreSQL (banco) / DBeaver (Visualizar o banco)
+
+npm install -g @nestjs/cli // instalar CLI
+
+npm run start:dev // rodar e atualizar em tempo real
+
+nest g controller
+nest g module
+nest g service
+nest g class
+
+npm i class-validator class-transformer
+npm i @nestjs/mapped-types
+
+npm i typeorm @nestjs/typeorm pg
+
+// Executar dentro do shell do container
+npx typeorm migration:create -n ./src/migrations/CourseRefactoring // Criar uma migration para executar comandos no banco de dados 
+
+npm run build // Gerar uma nova build (dist)
+
+npm install uuid // Geração automática do tipo da chave primária (Banco postgres no docker)
+
+############################### WSL ###############################
+
+Para acessar arquivos do windows através do WSL:
+
+cd/mnt/c => 'c' é o disco local que irá acessar
+
+Comando para dar permissão de execução:
+
+chmod +x .docker/entrypoint.sh
+
+############################### DOCKER ###############################
+
+Comando para executar shell do container: docker-compose exec app bash
+listar containers ativos: docker-compose ps
+Subir containers: docker-compose up
+Parar containers: docker-compose stop
+Derrubar containers: docker-compose down
+
+######################################################################
