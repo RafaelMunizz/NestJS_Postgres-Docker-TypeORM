@@ -76,7 +76,9 @@ npm install uuid // Geração automática do tipo da chave primária (Banco post
 
 Para acessar arquivos do windows através do WSL:
 
-cd/mnt/c => 'c' é o disco local que irá acessar
+Entrar na distro linux dentro do windows
+ 
+cd /mnt/c => 'c' é o disco local que irá acessar
 
 Comando para dar permissão de execução:
 
@@ -89,5 +91,9 @@ listar containers ativos: docker-compose ps
 Subir containers: docker-compose up
 Parar containers: docker-compose stop
 Derrubar containers: docker-compose down
+
+Derrubar container com a porta alocada:
+docker container ls
+docker rm -f {container-name}
 
 ######################################################################
